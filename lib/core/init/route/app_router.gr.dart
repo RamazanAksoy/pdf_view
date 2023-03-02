@@ -22,7 +22,19 @@ class _$AppRouter extends RootStackRouter {
         routeData: routeData,
         child: const HomeView(),
       );
-    }
+    },
+    ImageZoomRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const ImageZoomView(),
+      );
+    },
+    PdfRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const PdfView(),
+      );
+    },
   };
 
   @override
@@ -30,12 +42,20 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           '/#redirect',
           path: '/',
-          redirectTo: 'home',
+          redirectTo: '/home',
           fullMatch: true,
         ),
         RouteConfig(
           HomeRoute.name,
-          path: 'home',
+          path: '/home',
+        ),
+        RouteConfig(
+          ImageZoomRoute.name,
+          path: '/image',
+        ),
+        RouteConfig(
+          PdfRoute.name,
+          path: '/pdf',
         ),
       ];
 }
@@ -46,8 +66,32 @@ class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute()
       : super(
           HomeRoute.name,
-          path: 'home',
+          path: '/home',
         );
 
   static const String name = 'HomeRoute';
+}
+
+/// generated route for
+/// [ImageZoomView]
+class ImageZoomRoute extends PageRouteInfo<void> {
+  const ImageZoomRoute()
+      : super(
+          ImageZoomRoute.name,
+          path: '/image',
+        );
+
+  static const String name = 'ImageZoomRoute';
+}
+
+/// generated route for
+/// [PdfView]
+class PdfRoute extends PageRouteInfo<void> {
+  const PdfRoute()
+      : super(
+          PdfRoute.name,
+          path: '/pdf',
+        );
+
+  static const String name = 'PdfRoute';
 }
