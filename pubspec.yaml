@@ -43,6 +43,7 @@ dependencies:
   mobx: ^2.1.4
   flutter_mobx: ^2.0.0
   easy_localization: ^3.0.1
+  syncfusion_flutter_pdfviewer: ^20.4.52
 
 dev_dependencies:
   flutter_test:
